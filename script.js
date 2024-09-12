@@ -29,7 +29,7 @@ function formatCurrentTimeAndDuration(currentTime, duration) {
 async function getSongs(folder) {
   currentFolder = folder
 
-  let a = await fetch(`https://github.com/nishantsisodia/newSpo/tree/main/assets/ashiqui/${folder}`)
+  let a = await fetch(`http://192.168.1.2:8080/assets/ashiqui/${folder}/`)
 
   let response = await a.text()
   let div = document.createElement("div")
@@ -128,7 +128,7 @@ function playTheMusic(track, pause = false) {
 
 async function albumsNames() {
  
-  let a = await fetch(`https://github.com/nishantsisodia/newSpo/tree/main/assets/ashiqui/songs`)
+  let a = await fetch(`http://192.168.1.2:8080/assets/ashiqui/songs/`)
   let response = await a.text()
   let div = document.createElement("div")
   div.innerHTML = response
@@ -146,7 +146,7 @@ for (let i = 0; i < array.length; i++) {
     
     
 let albumCards = document.querySelector(".albumsContainer")
-    let a = await fetch(`https://github.com/nishantsisodia/newSpo/tree/main/assets/ashiqui/songs/${folders}/info.json`)
+    let a = await fetch(`http://192.168.1.2:8080/assets/ashiqui/songs/${folders}/info.json`)
     let response = await a.json()
 
     albumCards.innerHTML = albumCards.innerHTML + ` <div data-folder="${folders}" class="albumCard">
